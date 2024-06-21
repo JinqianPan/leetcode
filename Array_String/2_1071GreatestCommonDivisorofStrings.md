@@ -57,25 +57,35 @@ class Solution(object):
 ```
 
 ### Complexity
-Time complexity:
+Time complexity: $O(max(m, n))$
+>[!TIP]
+> Consider a = 1000, b = 1.
 
-Space complexity:
+Space complexity: $O(1)$
 
 ```python
 class Solution(object):
     def gcdOfStrings(self, str1: str, str2: str) -> str:
-        if str1+str2!=str2+str1:
+        if str1 + str2 != str2 + str1:
             return ""
-        a=len(str1)
-        b=len(str2)
-        if a<b:
-            a,b = b,a
+        a = len(str1)
+        b = len(str2)
+        if a < b:
+            a, b = b, a
         while b:
-            a,b=b,a%b
+            a, b = b, a % b
         return str2[:a]
 ```
 
 ### Complexity
-Time complexity:
+Time complexity: $O(\log_2(min(m, n)))$
+>[!TIP]
+> If $b \leq a/2$, then $a \mod b \leq b$.
+>
+> If $b > a/2$, then $a \mod b = a - b$, which is $\leq a/2$.
+>
+> Thus, each step reduces at least one of the numbers by a factor of about 2.
+>
+> Therefore, the number of steps required is proportional to the logarithm of the smaller number, which gives the time complexity $O (\log_2 \min(a, b))$.
 
-Space complexity:
+Space complexity: $O(1)$
