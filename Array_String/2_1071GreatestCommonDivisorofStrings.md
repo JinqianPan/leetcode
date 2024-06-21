@@ -10,9 +10,9 @@ $\text{Assume } d \text{ is the greatest common divisor of } a \text{ and } b \t
 
 $\text{ Also assume } a \div b = k \cdots r \text{, so that } a = b \times k + r $
 
-$\rightarrow d \times j = d \times i \times k + r$
+$\quad\rightarrow d \times j = d \times i \times k + r$
 
-$\rightarrow r = d \times (j - i \times k)$
+$\quad\rightarrow r = d \times (j - i \times k)$
 
 $d$ is also the gcd of $r$.
 
@@ -26,3 +26,30 @@ $\text{Assume } d \text{ is the greatest common divisor of } a \text{ and } b \t
 $ a - b = d \times j - d \times i = d \times (j - i)$
 
 So that $d$ is the gcd of $a-b$.
+
+
+```python
+class Solution(object):
+    def gcdOfStrings(self, str1, str2):
+        """
+        :type str1: str
+        :type str2: str
+        :rtype: str
+        """
+        def GCD(str1, str2):
+            if len(str2) > len(str1):
+                tmp_str = str1
+                str1 = str2
+                str2 = tmp_str
+            
+            if str2 == '':
+                return str1
+
+            if str1[0: len(str2)] == str2:
+                return GCD(str1[len(str2):], str2)
+            else:
+                return ''
+        
+        return GCD(str1, str2)
+
+```

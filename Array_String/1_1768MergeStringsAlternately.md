@@ -1,6 +1,6 @@
 # 1768. Merge Strings Alternately
 
-```
+```python
 class Solution(object):
     def mergeAlternately(self, word1, word2):
         """
