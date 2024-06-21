@@ -78,8 +78,10 @@ class Solution(object):
 ```
 
 ### Complexity
-Time complexity: $O(\log_2(min(m, n)))$
+Time complexity: $O(\log_2(min(m, n)) + (m + n))$
 >[!TIP]
+> For GCD:
+>
 > If $b \leq a/2$, then $a \mod b \leq b$.
 >
 > If $b > a/2$, then $a \mod b = a - b$, which is $\leq a/2$.
