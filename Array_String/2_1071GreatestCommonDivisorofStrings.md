@@ -23,10 +23,12 @@ Proof:
 
 $\text{Assume } d \text{ is the greatest common divisor of } a \text{ and } b \text{, where } a > b, a = d \times j, \text{ and } b = d \times i.$
 
-$ a - b = d \times j - d \times i = d \times (j - i)$
+$a - b = d \times j - d \times i = d \times (j - i)$
 
 So that $d$ is the gcd of $a-b$.
 
+----
+In this question, we get the two string, so the other trick part is how to move the gcd string from given strings.
 
 ```python
 class Solution(object):
@@ -53,3 +55,19 @@ class Solution(object):
         return GCD(str1, str2)
 
 ```
+
+```python
+class Solution(object):
+    def gcdOfStrings(self, str1: str, str2: str) -> str:
+        if str1+str2!=str2+str1:
+            return ""
+        a=len(str1)
+        b=len(str2)
+        if a<b:
+            a,b = b,a
+        while b:
+            a,b=b,a%b
+        return str2[:a]
+```
+
+# Complexity
