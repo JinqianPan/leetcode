@@ -27,7 +27,7 @@ $a - b = d \times j - d \times i = d \times (j - i)$
 
 So that $d$ is the gcd of $a-b$.
 
-----
+## Code
 In this question, we get the two string, so the other trick part is how to move the gcd string from given strings.
 
 ```python
@@ -56,6 +56,11 @@ class Solution(object):
 
 ```
 
+### Complexity
+Time complexity:
+
+Space complexity:
+
 ```python
 class Solution(object):
     def gcdOfStrings(self, str1: str, str2: str) -> str:
@@ -70,4 +75,7 @@ class Solution(object):
         return str2[:a]
 ```
 
-# Complexity
+### Complexity
+Time complexity:
+
+Space complexity:
