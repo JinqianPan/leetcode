@@ -57,10 +57,7 @@ class Solution(object):
 ```
 
 ### Complexity
-Time complexity: $O(max(m, n))$
->[!TIP]
-> Consider a = 1000, b = 1.
-
+Time complexity: 
 Space complexity: $O(1)$
 
 ```python
@@ -76,9 +73,10 @@ class Solution(object):
             a, b = b, a % b
         return str2[:a]
 ```
+`str1 + str2 != str2 + str1` could ensures that the strings have a common greatest common divisor.
 
 ### Complexity
-Time complexity: $O(\log_2(min(m, n)) + (m + n))$
+Time complexity: $O(\log_2(min(m, n)) + (m + n)) \Rightarrow O(m + n)$
 >[!TIP]
 > For GCD:
 >
