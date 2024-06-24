@@ -28,7 +28,7 @@ class Solution(object):
         return ''.join(char_list)
 ```
 
->[TIP!]
+>[!TIP]
 >
 > char_list = list(s) and ''.join(char_list)
 
